@@ -27,3 +27,10 @@ kafka-console-producer --broker-list localhost:9092 --topic lazy
 # 创建消费者，监听 lazy 的消息
 kafka-console-consumer --bootstrap-server localhost:9092 --topic lazy --from-beginning
 ```
+
+## Kafka 中 replication 和 partitions 指什么
+
+## 待阅读
+
++ https://shenbaise9527.com/opentracing-zipkin-guide/#storage
++ https://www.lixueduan.com/post/tracing/02-framework-compare/

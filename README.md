@@ -1,34 +1,24 @@
-## 启动 kafka
+ZipKin Server Demo
+===
 
-```
-# 启动 zk
-sudo /usr/local/Cellar/kafka/2.8.0/bin/zookeeper-server-start /usr/local/etc/kafka/zookeeper.properties
+## Build & Running ZipKin
 
-# 启动 kafka
-/usr/local/Cellar/kafka/2.8.0/bin/kafka-server-start /usr/local/etc/kafka/server.properties
-```
+### Build
 
-## 管理 Topic
-
-```
-# 创建 topic lazy
-kafka-topics --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic lazy
-
-# 列出所有 topic
-kafka-topics --list --zookeeper localhost:2181
+```shell
+cd /home/xuyundong/.local/zipkin-2.22.1
+# 构建 Server 和 它的依赖
+./mvnw -DskipTests --also-make -pl zipkin-server clean install
 ```
 
-## 发送消息
+### Running
 
-```
-# 创建生产者，发送消息到 lazy 上
-kafka-console-producer --broker-list localhost:9092 --topic lazy
+运行 zipkin Server，使用 kafka 作为 collector
 
-# 创建消费者，监听 lazy 的消息
-kafka-console-consumer --bootstrap-server localhost:9092 --topic lazy --from-beginning
-```
++ `KAFKA_BOOTSTRAP_SERVERS=127.0.0.1:9092 STORAGE_TYPE=elasticsearch ES_HOSTS=http://localhost:9200 java -jar ./zipkin-server/target/zipkin-server-2.22.1-exec.jar`
 
-## Kafka 中 replication 和 partitions 指什么
++ __注意__: 构建的时候要关掉 maven 的镜像，使用 apache.org 源，否则会出现下载依赖包的错误: [Authorization failed](https://gist.github.com/bwangelme/af849ca7553f63fa433e593738377457)
+
 
 ## 待阅读
 

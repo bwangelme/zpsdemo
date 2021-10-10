@@ -18,7 +18,7 @@ var (
 const (
 	serviceName     = "zipkin_http_server"
 	serviceEndpoint = "localhost:8080"
-	kafkaAddr       = "localhost:2181"
+	kafkaAddr       = "localhost:9092"
 )
 
 func Pong(w http.ResponseWriter, r *http.Request) {
@@ -53,5 +53,6 @@ func initMux() http.Handler {
 func main() {
 	mux := initMux()
 
+	fmt.Println("Running Server on localhost:8080")
 	http.ListenAndServe(":8080", mux)
 }

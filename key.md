@@ -3,7 +3,14 @@
 
 ## 部署
 
-+ 数据在 es 中是如何存储的
+### 数据在 es 中是如何存储的
+
+按天创建索引，索引的名称是 `zipkin-span-2021-10-10`
+
++ `ES_INDEX` 设置索引前缀，默认是 `zipkin`
++ `ES_DATE_SEPARATOR` 索引的日期分割符，默认是 `-`
++ `ES_INDEX_SHARDS` 分片数
++ `ES_INDEX_REPLICAS` 副本数
 
 ### 传输时不同 App 使用不同的 Topic
 
@@ -16,8 +23,8 @@
 
 ## 规模
 
-+ zipkin 的 kafka 支持多大的并发量
-+ 存储 10W 个 span，es 需要多大的磁盘空间
++ zipkin 的 kafka 支持多大的并发量 ?
++ 存储 10W 个 span，es 需要多大的磁盘空间 ?
 
 ## 监控
 

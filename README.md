@@ -22,5 +22,15 @@ cd /home/xuyundong/.local/zipkin-2.22.1
 
 ## 待阅读
 
-+ https://shenbaise9527.com/opentracing-zipkin-guide/#storage
-+ https://www.lixueduan.com/post/tracing/02-framework-compare/
++ [全链路监控（一）：方案概述与比较](https://juejin.cn/post/6844903560732213261#heading-0)
++ [一文读懂微服务监控之分布式追踪](https://zhuanlan.zhihu.com/p/77139483)
++ [Twitter 的 RPC 框架 Finagle 简介](https://www.infoq.cn/article/2014/05/twitter-finagle-intro)
++ https://medium.com/oracledevs/setup-a-distributed-tracing-infrastructure-with-zipkin-kafka-and-cassandra-d0a68fb3eee6
++ https://www.confluent.io/blog/importance-of-distributed-tracing-for-apache-kafka-based-applications/
+
+## 参考链接
+
++ [zipkin QuickStart](https://zipkin.io/pages/quickstart.html)
++ [Zipkin指南](https://shenbaise9527.com/opentracing-zipkin-guide/#storage)
++ [zipkin Architecture](https://zipkin.io/pages/architecture.html)
++ [zipkin server readme](https://github.com/openzipkin/zipkin/tree/master/zipkin-server#endpoints)

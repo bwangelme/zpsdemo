@@ -1,6 +1,31 @@
 部署 zipkin 的几个关键问题
 ===
 
+## 目标
+
+### 低消耗
+
+go client 发送数据到 kafka 的 send time < 20ms
+python client 发送数据到 kafka 的 sen time < 10ms (python 是同步发送的逻辑，所以时延要求更低)
+
+### 应用级的透明
+
+Python Or Go 应用程序在执行时，能够记录以下操作的指标和操作时间
+
++ redis operation, time, key
++ kv db operation, time, key
++ mysql sql, time
++ http url, time, method
++ pidl interface, time
++ thrift interface, time
+
+此外，dae 还提供了接口，支持添加自定义的 span
+
+### 延展性
+
++ kafka 支持不同 app 使用不同的 server 或 topic，可以横向扩展
++ es 是每天将数据存储到同一个 index 中，不知道扩展性是否会有问题
+
 ## 部署
 
 ### 数据在 es 中是如何存储的
@@ -31,3 +56,4 @@
 + kafka 的 topic 中消息的数量
 + zipkin collector 记录收到的 span / trace 数量
 + 按照 app + url 分别记录发送的 span/trace 数量
++ client 发送数据到 kafka 的时间

@@ -29,3 +29,6 @@ kafka-console-consumer --bootstrap-server localhost:9092 --topic lazy --from-beg
 ```
 
 ## Kafka 中 replication 和 partitions 指什么
+
+replication: 副本数
+partitions: 分区数

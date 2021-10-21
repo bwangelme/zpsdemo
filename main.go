@@ -26,6 +26,10 @@ func Pong(w http.ResponseWriter, r *http.Request) {
 	return
 }
 
+func SendKafka(w http.ResponseWriter, r *http.Request) {
+
+}
+
 func initMux() http.Handler {
 	var err error
 
